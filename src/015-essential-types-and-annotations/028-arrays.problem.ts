@@ -3,6 +3,7 @@
 // How do we type 'items' in the ShoppingCart?
 type ShoppingCart = {
   userId: string;
+  items: string[];
 };
 
 // TESTS
@@ -13,5 +14,5 @@ const processCart = (cart: ShoppingCart) => {
 
 processCart({
   userId: "user123",
-  items: ["item1", "item2", "item3"],
+  items: ["item1", "item2", "item3"]
 });

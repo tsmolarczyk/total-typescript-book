@@ -1,7 +1,18 @@
+import { Rectangle } from "./../032-typescript-only-features/122-namespaces-can-declaration-merge.explainer";
 import { Expect, Equal } from "@total-typescript/helpers";
 import { expect, it } from "vitest";
 
-const getRectangleArea = (rectangle: { width: number; height: number }) => {
+// interface RectangleArea {
+//   width: number;
+//   height: number;
+// }
+
+type Rectangle = {
+  width: number;
+  height: number;
+};
+
+const getRectangleArea = (rectangle: Rectangle) => {
   return rectangle.width * rectangle.height;
 };
 
@@ -15,7 +26,7 @@ const getRectanglePerimeter = (rectangle: {
 it("should return the area of a rectangle", () => {
   const result = getRectangleArea({
     width: 10,
-    height: 20,
+    height: 20
   });
 
   type test = Expect<Equal<typeof result, number>>;
@@ -26,7 +37,7 @@ it("should return the area of a rectangle", () => {
 it("should return the perimeter of a rectangle", () => {
   const result = getRectanglePerimeter({
     width: 10,
-    height: 20,
+    height: 20
   });
 
   type test = Expect<Equal<typeof result, number>>;
